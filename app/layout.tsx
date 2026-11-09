@@ -13,7 +13,7 @@ const bricolage = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-br
 const silkscreen = Silkscreen({ weight: ["400", "700"], subsets: ["latin"], variable: "--font-silkscreen" });
 
 const description =
-  "Rides, arcade games and unforgettable moments at Chunky Monkey amusement parks in Karachi and Hyderabad. Open Monday to Sunday, 4PM to midnight.";
+  "Rides, arcade games and unforgettable moments at Chunky Monkey amusement parks at DHA Phase IV and Saima Jinnah Icon Mall, Karachi. Open Monday to Sunday, 4PM to midnight.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://chunkymonkey.com.pk"),

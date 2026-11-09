@@ -1,13 +1,12 @@
 /**
  * Every fact on the homepage lives here.
  *
- * Source: chunkymonkey.com.pk, read through Internet Archive snapshots dated
- * June–July 2026 (/, /about-us/, /park-rides/, /attractions/, /book-event/,
- * /contact-us/). The live domain did not resolve when this was written, so
- * confirm hours and contact details with the park before launch.
+ * Parks and headline numbers follow the current Chunky Monkey site
+ * (chunkymonkey-bytes.vercel.app): two parks, DHA Phase IV and Saima Jinnah
+ * Icon Mall. Ride descriptions, facilities, rules and event details come from
+ * chunkymonkey.com.pk (Internet Archive snapshots, June–July 2026).
  *
- * Deliberately left out: the Rs. 1000 reload offer (the artwork dates from 2023)
- * and ticket prices (none are published on the official site).
+ * Deliberately left out: ticket prices and seasonal offers, which change.
  */
 
 const maps = (query: string) =>
@@ -40,71 +39,53 @@ export type Park = {
   id: string;
   level: string;
   name: string;
+  tag: string;
   city: string;
   address: string;
-  phone: { label: string; href: string };
-  established: string;
-  area: string;
-  rides: string;
-  ridesNote: string;
+  about: string;
+  phone?: { label: string; href: string };
   directions: string;
 };
 
 export const parks: Park[] = [
   {
-    id: "seaview",
-    level: "01",
-    name: "Sea View",
-    city: "Karachi",
-    address: "B-1, Khayban-e-Sahil, Seaview Road, DHA, Karachi",
-    phone: { label: "+92-21-35248116-8", href: "tel:+922135248116" },
-    established: "2015",
-    area: "65,000 sq ft",
-    rides: "56+",
-    ridesNote: "Indoor and outdoor",
-    directions: maps("Chunky Monkey Amusement Parks, Sea View Road, DHA, Karachi"),
-  },
-  {
     id: "phase-iv",
-    level: "02",
+    level: "01",
     name: "DHA Phase IV",
+    tag: "Flagship park",
     city: "Karachi",
-    address: "Adjacent Nisar Shaheed Park, DHA, Phase IV, Karachi",
+    address: "Adjacent Nisar Shaheed Park, DHA Phase IV, Karachi",
+    about: "Outdoor rides, indoor games, 7D Cinema and Fun City",
     phone: { label: "+92-21-35899583-4", href: "tel:+922135899583" },
-    established: "1996",
-    area: "3.3 acres",
-    rides: "30+",
-    ridesNote: "7D Cinema, Fun City, indoor games",
-    directions: maps("Chunky Monkey Amusement Park, DHA Phase 4, Karachi"),
+    directions: maps("Chunky Monkey DHA Phase 4 Karachi"),
   },
   {
-    id: "hyderabad",
-    level: "03",
-    name: "Hyderabad",
-    city: "Hyderabad",
-    address: "1st Floor, Mehran Shopping Complex, opp: Cantonment Board, Hyderabad",
-    phone: { label: "+92-22-2783989", href: "tel:+92222783989" },
-    established: "2007",
-    area: "4,400 sq ft",
-    rides: "54",
-    ridesNote: "Indoor kiddie rides",
-    directions: maps("Chunky Monkey Hyderabad"),
+    id: "icon-mall",
+    level: "02",
+    name: "Saima Jinnah Icon Mall",
+    tag: "At the mall",
+    city: "Karachi",
+    address: "Saima Jinnah Icon Mall, Karachi",
+    about: "Come and find us at the mall",
+    directions: maps("Saima Jinnah Icon Mall"),
   },
 ];
 
-/** Named on the official rides page, per park. Not exhaustive: the ride counts above are larger. */
-export const rideRoster = {
-  "Sea View": [
-    "Tagada", "Frisbee", "Flying Carpet", "Merry Go Round", "Speedy Car", "Train",
-    "Gyro Loop", "Flash Tower", "Twist and Bounce", "Bumping Car", "7D Cinema",
-  ],
-  "DHA Phase IV": [
-    "Tea Cups", "Merry Go Round", "Dodgem Car", "Family Coaster", "Tagada", "Parachute",
-    "Flying Carpet", "Flying Chair", "Pirate Ship", "Pirate Party", "Frisbee", "Octopus",
-    "Skater", "Caterpillar", "Sindbad", "Happy Swing", "Sea Shell", "Time Travel",
-    "Action Arm", "Shake Off", "7D Cinema",
-  ],
-};
+export const stats = [
+  { value: "2", label: "Branches", note: "Phase IV and the mall", color: "#dfff38" },
+  { value: "30+", label: "Rides", note: "Fast, gentle and everything between", color: "#ff6637" },
+  { value: "100+", label: "Arcade machines", note: "Bring your high score", color: "#f6f0df" },
+  { value: "30", label: "Years in business", note: "Fun for all, since day one", color: "#dfff38" },
+];
+
+/** Rides named on the Chunky Monkey sites. Not exhaustive. */
+export const rideRoster = [
+  "Merry Go Round", "Time Travel", "Speedy Car", "Flying Chair", "Pirate Party",
+  "Bumping Car", "Flash Tower", "Flying Carpet", "Tea Cups", "Family Coaster",
+  "Tagada", "Parachute", "Pirate Ship", "Frisbee", "Octopus", "Skater",
+  "Caterpillar", "Sindbad", "Happy Swing", "Sea Shell", "Action Arm", "Shake Off",
+  "7D Cinema",
+];
 
 export const facilities = [
   { name: "Dedicated parking", note: "Separate parking for visitors" },

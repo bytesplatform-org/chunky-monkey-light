@@ -73,7 +73,11 @@ export function Footer() {
               {parks.map((p) => (
                 <li key={p.id}>
                   <a href={p.directions} target="_blank" rel="noreferrer" className="t-cond block text-2xl hover:text-lime">{p.name}</a>
-                  <a href={p.phone.href} className="text-sm text-cream-dim hover:text-cream">{p.phone.label}</a>
+                  {p.phone ? (
+                    <a href={p.phone.href} className="text-sm text-cream-dim hover:text-cream">{p.phone.label}</a>
+                  ) : (
+                    <p className="text-sm text-cream-dim">{p.tag}</p>
+                  )}
                 </li>
               ))}
             </ul>

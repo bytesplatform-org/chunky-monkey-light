@@ -55,7 +55,7 @@ export function Rides() {
           <p className="relative z-10 mt-5 max-w-md text-xl leading-snug font-medium">
             A shoot-up, drop-down tower more than 40 metres tall. A great leg-dangling sensation for riders, and a great spectacle for everyone else.
           </p>
-          <Meta items={["Sea View", "Age: Adult"]} className="relative z-10 mt-5" />
+          <Meta items={["Age: Adult"]} className="relative z-10 mt-5" />
         </div>
       </article>
 
@@ -71,7 +71,7 @@ export function Rides() {
             <p className="mt-6 max-w-sm text-xl leading-snug font-medium">
               One of the most iconic rides there is, and one of the most fun-filled. Grab a wheel. Nobody here is staying between the lines.
             </p>
-            <Meta items={["Sea View", "Age: Adult + child"]} className="mt-5" />
+            <Meta items={["Age: Adult + child"]} className="mt-5" />
           </div>
           <div className="relative lg:col-span-7 lg:-my-10">
             <ClippedPhoto
@@ -97,8 +97,8 @@ export function Rides() {
               shadow="var(--lime)"
             />
             <ClippedPhoto
-              src="/media/rides/gyro-loop-night.jpg"
-              alt="Gyro Loop glowing with coloured lights at night"
+              src="/media/rides/action-arm-night.jpg"
+              alt="Action Arm lit up red against the night sky"
               sizes="(min-width: 1024px) 24vw, 40vw"
               className="col-span-2 mb-10 aspect-square [--s:10px]"
               shadow="var(--orange)"
@@ -109,12 +109,12 @@ export function Rides() {
             <p aria-hidden="true" className="t-display mt-3 text-[5rem] leading-none text-purple lg:text-[9rem]">03</p>
             <h3 className="t-display mt-2 text-[3.4rem] leading-[.9] lg:text-[5.6rem]">
               <span className="block text-lime">Frisbee</span>
-              <span className="block text-[.62em]">+ Gyro Loop</span>
+              <span className="block text-[.62em]">+ Action Arm</span>
             </h3>
             <p className="mt-6 max-w-md text-xl leading-snug">
-              A circular gondola that rotates as it swings. A scream machine that spins before it swings. Both look even better once the sun goes down.
+              A circular gondola that rotates as it swings. Hydraulic arms that turn, twist and swivel in every direction. Both look even better once the sun goes down.
             </p>
-            <Meta items={["Sea View", "Frisbee also at Phase IV", "Age: Adult + child"]} className="mt-5 text-cream" />
+            <Meta items={["DHA Phase IV", "Age: Adult + child"]} className="mt-5 text-cream" />
           </div>
         </div>
       </article>
@@ -155,23 +155,19 @@ export function Rides() {
             Plenty more on the floor.
           </h3>
           <p className="mt-5 max-w-xs text-lg leading-snug">
-            Rides named on the official list, by park. Sea View has 56+ rides and games in all, Phase IV 30+.
+            30+ rides, plus 100+ arcade machines. Here are the ones with names.
           </p>
         </div>
-        <div className="mt-10 grid gap-10 sm:grid-cols-[1fr_1.7fr] lg:col-span-8 lg:mt-0">
-          {Object.entries(rideRoster).map(([park, rides]) => (
-            <div key={park}>
-              <h4 className="t-cond flex items-center gap-2 border-b-[3px] border-ink pb-2 text-3xl">
-                <PixelStar size={16} color="#ff6637" />
-                {park}
-              </h4>
-              <ul className={`t-cond mt-3 grid gap-x-6 gap-y-1 text-[1.625rem] ${rides.length > 12 ? "grid-cols-2" : ""}`}>
-                {rides.map((r) => (
-                  <li key={r}>{r}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="mt-10 lg:col-span-8 lg:mt-0">
+          <h4 className="t-cond flex items-center gap-2 border-b-[3px] border-ink pb-2 text-3xl">
+            <PixelStar size={16} color="#ff6637" />
+            On the floor
+          </h4>
+          <ul className="t-cond mt-3 grid grid-cols-2 gap-x-6 gap-y-1 text-[1.625rem] sm:grid-cols-3">
+            {rideRoster.map((r) => (
+              <li key={r}>{r}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
